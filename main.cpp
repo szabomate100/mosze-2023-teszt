@@ -1,24 +1,25 @@
 #include <iostream>
 
-constexpr int N_ELEMENTS = 100; //a main() belulre kell
 
 int main()
 {
-    int *b = new int[NELEMENTS]; //hianyzo _
-    std::cout << '1-100 ertekek duplazasa' // \n a vegere hogy normalisan nezzen ki
-    for (int i = 0;) //befejezetlen for ciklus
+    constexpr int N_ELEMENTS = 100;
+
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa\n";
+    for (int i = 0; i<=99; i++)
     {
-        b[i] = i * 2;
+        b[i] = (i+1) * 2;
     }
-    for (int i = 0; i; i++) //hianyzo feltetel
+    for (int j = 0; j<=99; j++)
     {
-        std::cout << "Ertek:" //konkret ertek kiratas hianyzik
+        std::cout << "Ertek:" << b[j] << ' ';
     }    
-    std::cout << "Atlag szamitasa: " << std::endl; // \n elejere hogy normalisan nezzen ki
+    std::cout << "\nAtlag szamitasa: " << std::endl;
     int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++) //vesszo van a pontosvesszo helyett
+    for (int k = 0; k < N_ELEMENTS; k++)
     {
-        atlag += b[i] // hianyzo ; a sor vegerol
+        atlag += b[k];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
